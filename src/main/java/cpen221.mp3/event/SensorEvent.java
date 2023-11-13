@@ -1,5 +1,9 @@
 package cpen221.mp3.event;
 
 public class SensorEvent implements Event {
-    // TODO: Implement this class
+    // Implement this class
+
+    public SensorEvent(int entityId, String entityType, double valueDouble) {
+        // Implement this constructor
+    }
 }
