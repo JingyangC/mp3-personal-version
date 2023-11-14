@@ -2,6 +2,7 @@ package cpen221.mp3.server;
 
 import cpen221.mp3.entity.Actuator;
 import cpen221.mp3.client.Client;
+import cpen221.mp3.entity.Entity;
 import cpen221.mp3.event.Event;
 import cpen221.mp3.filter.Filter;
 
@@ -83,7 +84,18 @@ public class Server {
      * @param n the max number of events to list
      * @return list of the latest n events of the client
      */
-    public List<Event> lantNEvents(int n) {
+    public List<Event> lastNEvents(int n) {
+        // implement this method
+        return null;
+    }
+
+    /**
+     * returns the most active entity of the client in terms of 
+     * the number of events it has generated.
+     * 
+     * @return the most active entity of the client
+     */
+    public Entity mostActiveEntity() {
         // implement this method
         return null;
     }

@@ -1,8 +1,8 @@
 package cpen221.mp3.entity;
 
 public class Actuator implements Entity {
-    private int id;
-    private String type;
+    private final int id;
+    private final String type;
     private boolean state;
 
     public Actuator(int id, String type, boolean init_state) {

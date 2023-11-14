@@ -3,7 +3,7 @@ package cpen221.mp3.client;
 public class Client {
     // You can add additional private fields and methods to this class if you wish
 
-    private int clientId;
+    private final int clientId;
     private String email;
     private String host;
     private int port;

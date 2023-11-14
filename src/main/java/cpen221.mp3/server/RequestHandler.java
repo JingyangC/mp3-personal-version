@@ -7,12 +7,14 @@ public class RequestHandler {
     private ServerSocket serverSocket;
     private int port;
 
+    // you may need to add additional private fields and methods to this class
+
     public RequestHandler(int port) {
         this.port = port;
     }
 
     public void start() {
-        // the following is just one way of starting the handler
+        // the following is just to get you started
         // you may need to change it to fit your implementation
         try {
             serverSocket = new ServerSocket(port);
@@ -34,19 +36,5 @@ public class RequestHandler {
     public static void main(String[] args) {
         // you would need to initialize the RequestHandler with the port number
         // and then start it here
-    }
-}
-
-class RequestHandlerThread implements Runnable {
-    private Socket clientSocket;
-
-    public RequestHandlerThread(Socket clientSocket) {
-        this.clientSocket = clientSocket;
-    }
-
-    @Override
-    public void run() {
-        // handle the client request here
-        // and deal with exceptions if needed
     }
 }
