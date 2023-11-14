@@ -1,5 +1,12 @@
 package cpen221.mp3.server;
 
+import cpen221.mp3.entity.Actuator;
+import cpen221.mp3.client.Client;
+import cpen221.mp3.event.Event;
+import cpen221.mp3.filter.Filter;
+
+import java.util.List;
+
 enum NotificationChannel {
     SOCKET,
     EMAIL
@@ -12,27 +19,45 @@ public class Server {
     // you may need to add additional private fields
 
     public Server(Client client) {
-        // implementation of Server constructor
+        // implement the Server constructor
     }
 
+    /**
+     * Set the actuator state if the given filter is satisfied by the latest event.
+     * Here the latest event is the event with the latest timestamp not the event 
+     * that was received by the server the latest.
+     *
+     * @param filter the filter to check
+     * @param actuator the actuator to set the state of as true
+     */
     public void setActuatorStateIf(Filter filter, Actuator actuator) {
-        // implementation of actuateIf method
+        // implement this method
     }
     
+    /**
+     * Toggle the actuator state if the given filter is satisfied by the latest event.
+     * Here the latest event is the event with the latest timestamp not the event 
+     * that was received by the server the latest.
+     *
+     * @param filter the filter to check
+     * @param actuator the actuator to toggle the state of (true -> false, false -> true)
+     */
     public void toggleActuatorStateIf(Filter filter, Actuator actuator) {
-        // implementation of actuateIf method
+        // implement this method
     }
 
     /**
      * Notifies the client if the given filter is satisfied by the latest event
-     * of the client's.
+     * of the client's. Here the latest event is the event with the latest timestamp 
+     * not the event that was received by the server the latest.
      *
      * @param filter the filter to check
      * @param notificationChannel the channel to use for notification
      * @return true if the client was notified, false otherwise
      */
     public boolean notifyIf(Filter filter, NotificationChannel notificationChannel) {
-        // implementation of notifyIf method
+        // implement this method
+        return false;
     }
 
     /**
@@ -46,7 +71,6 @@ public class Server {
      */
     public List<Event> eventsInTimeWindow(TimeWindow timeWindow) {
         // implement this method
-
         return null;
     }
 
@@ -61,14 +85,24 @@ public class Server {
      */
     public List<Event> lantNEvents(int n) {
         // implement this method
-
         return null;
     }
 
+    /**
+     * Update the max wait time for the client.
+     * The max wait time is the maximum amount of time 
+     * that the server can wait for before starting to process each event of the client:
+     * It is the difference between the time the message was received on the server 
+     * (not the event timeStamp from above) and the time it started to be processed.
+     * 
+     * @param maxWaitTime the new max wait time
+     */
     public void updateMaxWaitTime(double maxWaitTime) {
-        // here, the maxWaitTime field which controls the quality of service for the client
-        // should be updated to the given value
-        // note that it may not be as simple as just updating the field 
-        // further handling of your implementation may be needed
+        // implement this method
+
+        // Important note: updating maxWaitTime may not be as simple
+        // as just updating the field. You may need to do some additional
+        // work to ensure that events currently being processed are not
+        // dropped or ignored by the change in maxWaitTime.
     }
 }
