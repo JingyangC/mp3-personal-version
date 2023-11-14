@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EventTest{
     @Test
-    public void testCreateEvent() {
+    public void testCreateSingleEvent() {
         Event event = new SensorEvent(1, "TempSensor", 24.0);
         assertEquals(1, event.getEntityId());
         assertEquals("TempSensor", event.getEntityType());

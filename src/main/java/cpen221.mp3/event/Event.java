@@ -4,6 +4,8 @@ public interface Event {
     
     double getTimeStamp();
 
+    int getClientId();
+
     int getEntityId();
 
     String getEntityType();
