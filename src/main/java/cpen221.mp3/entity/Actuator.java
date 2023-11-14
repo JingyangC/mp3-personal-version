@@ -1,6 +1,6 @@
 package cpen221.mp3.entity;
 
-public class Sensor implements Actuator {
+public class Actuator implements Entity {
     private int id;
     private String type;
     private boolean state;
@@ -11,14 +11,16 @@ public class Sensor implements Actuator {
         this.state = init_state;
     }
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public String getType() {
         return type;
+    }
+
+    public boolean isActuator() {
+        return true;
     }
 
     public boolean getState() {

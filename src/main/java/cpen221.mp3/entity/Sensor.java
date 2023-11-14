@@ -9,13 +9,15 @@ public class Sensor implements Entity {
         this.type = type;
     }
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public String getType() {
         return type;
+    }
+
+    public boolean isActuator() {
+        return false;
     }
 }
