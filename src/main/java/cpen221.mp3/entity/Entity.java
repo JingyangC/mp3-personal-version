@@ -1,5 +1,7 @@
 package cpen221.mp3.entity;
 
+import cpen221.mp3.event.Event;
+
 public interface Entity {
     // returns the id of the entity
     int getId();
@@ -12,4 +14,7 @@ public interface Entity {
 
     // returns true if the entity is an actuator
     boolean isActuator();
+
+    // sends an event to the given host and port
+    void sendEvent(Event event, String host, int port);
 }

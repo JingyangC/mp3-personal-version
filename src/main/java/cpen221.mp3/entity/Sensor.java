@@ -1,5 +1,7 @@
 package cpen221.mp3.entity;
 
+import cpen221.mp3.event.Event;
+
 public class Sensor implements Entity {
     private final int id;
     private final int clientId;
@@ -7,7 +9,7 @@ public class Sensor implements Entity {
 
     public Sensor(int id, int clientId, String type) {
         this.id = id;
-        this.clientId = id;
+        this.clientId = clientId;
         this.type = type;
     }
 
@@ -25,5 +27,9 @@ public class Sensor implements Entity {
 
     public boolean isActuator() {
         return false;
+    }
+
+    public void sendEvent(Event event, String host, int port) {
+        // implement this method
     }
 }

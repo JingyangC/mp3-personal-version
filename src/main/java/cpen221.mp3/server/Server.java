@@ -133,4 +133,12 @@ public class Server {
         // work to ensure that events currently being processed are not
         // dropped or ignored by the change in maxWaitTime.
     }
+
+    void processIncomingEvent(Event event) {
+        // implement this method
+    }
+
+    void processIncomingRequest(Request request) {
+        // implement this method
+    }
 }
