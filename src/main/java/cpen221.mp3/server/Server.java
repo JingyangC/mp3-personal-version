@@ -76,12 +76,13 @@ public class Server {
     }
 
      /**
-     * Returns all the entities of the client for which we have received events so far.
-     * returns an empty list if no events have been received for the client.
+     * Returns a set of IDs for all the entities of the client for which 
+     * we have received events so far.
+     * Returns an empty list if no events have been received for the client.
      * 
      * @return list of all the entities of the client for which we have received events so far
      */
-    public List<Entity> getAllEntities() {
+    public List<Integer> getAllEntities() {
         // implement this method
         return null;
     }
@@ -91,6 +92,8 @@ public class Server {
      * Here the order is based on the original timestamp of the events, not the time at which the events were received by the server.
      * If the client has fewer than n events, then this method should return all the events of the client.
      * If no events exist for the client, then this method should return an empty list.
+     * If there there are multiple events with the same timestamp in the boundary, 
+     * the ones with largest EntityId should be included in the list.
      *
      * @param n the max number of events to list
      * @return list of the latest n events of the client
@@ -101,14 +104,16 @@ public class Server {
     }
 
     /**
-     * returns the most active entity of the client in terms of 
-     * the number of events it has generated.
+     * returns the ID corresponding to the most active entity of the client
+     * in terms of the number of events it has generated.
+     *
+     * If there was a tie, then this method should return the largest ID.
      * 
-     * @return the most active entity of the client
+     * @return the most active entity ID of the client
      */
-    public Entity mostActiveEntity() {
+    public int mostActiveEntity() {
         // implement this method
-        return null;
+        return -1;
     }
 
     /**
