@@ -21,23 +21,25 @@ public class Filter {
 
     /**
      * Constructs a filter that compares the boolean (actuator) event value
-     * with the given boolean value using the given operator.
-     * An Operator can be one of the following:
+     * to the given boolean value using the given BooleanOperator.
+     * (X (BooleanOperator) value), where X is the event's value passed by satisfies or sift methods.
+     * A BooleanOperator can be one of the following:
      * 
      * BooleanOperator.EQUALS
      * BooleanOperator.NOT_EQUALS
      *
-     * @param value the boolean value to match
      * @param operator the BooleanOperator to use to compare the event value with the given value
+     * @param value the boolean value to match
      */
-    public Filter(boolean value, BooleanOperator operator) {
+    public Filter(BooleanOperator operator, boolean value) {
         // TODO: implement this method
     }
 
     /**
      * Constructs a filter that compares a double field in events
      * with the given double value using the given DoubleOperator.
-     * An DoubleOperator can be one of the following:
+     * (X (DoubleOperator) value), where X is the event's value passed by satisfies or sift methods.
+     * A DoubleOperator can be one of the following:
      * 
      * DoubleOperator.EQUALS
      * DoubleOperator.GREATER_THAN
@@ -48,10 +50,10 @@ public class Filter {
      * For non-double (boolean) value events, the satisfies method should return false.
      *
      * @param field the field to match (event "value" or event "timestamp")
-     * @param value the double value to match
      * @param operator the DoubleOperator to use to compare the event value with the given value
+     * @param value the double value to match
      */
-    public Filter(String field, double value, DoubleOperator operator) {
+    public Filter(String field, DoubleOperator operator, double value) {
         // TODO: implement this method
     }
     
