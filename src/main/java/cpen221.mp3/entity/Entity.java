@@ -4,6 +4,9 @@ public interface Entity {
     // returns the id of the entity
     int getId();
 
+    // returns the client id of the entity
+    int getClientId();
+
     // returns the type of the entity
     String getType();
 
