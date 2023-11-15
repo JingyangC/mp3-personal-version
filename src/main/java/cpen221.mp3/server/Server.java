@@ -92,7 +92,7 @@ public class Server {
      * Here the order is based on the original timestamp of the events, not the time at which the events were received by the server.
      * If the client has fewer than n events, then this method should return all the events of the client.
      * If no events exist for the client, then this method should return an empty list.
-     * If there there are multiple events with the same timestamp in the boundary, 
+     * If there are multiple events with the same timestamp in the boundary,
      * the ones with largest EntityId should be included in the list.
      *
      * @param n the max number of events to list
