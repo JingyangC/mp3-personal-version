@@ -75,6 +75,17 @@ public class Server {
         return null;
     }
 
+     /**
+     * Returns all the entities of the client for which we have received events so far.
+     * returns an empty list if no events have been received for the client.
+     * 
+     * @return list of all the entities of the client for which we have received events so far
+     */
+    public List<Entity> getAllEntities() {
+        // implement this method
+        return null;
+    }
+
     /**
      * List the latest n events of the client.
      * Here the order is based on the original timestamp of the events, not the time at which the events were received by the server.
