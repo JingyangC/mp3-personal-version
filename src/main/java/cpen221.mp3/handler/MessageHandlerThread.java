@@ -2,10 +2,10 @@ package cpen221.mp3.handler;
 
 import java.net.Socket;
 
-class RequestHandlerThread implements Runnable {
+class MessageHandlerThread implements Runnable {
     private Socket clientSocket;
 
-    public RequestHandlerThread(Socket clientSocket) {
+    public MessageHandlerThread(Socket clientSocket) {
         this.clientSocket = clientSocket;
     }
 

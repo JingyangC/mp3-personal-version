@@ -3,13 +3,13 @@ package cpen221.mp3.handler;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class RequestHandler {
+public class MessageHandler {
     private ServerSocket serverSocket;
     private int port;
 
     // you may need to add additional private fields and methods to this class
 
-    public RequestHandler(int port) {
+    public MessageHandler(int port) {
         this.port = port;
     }
 
@@ -25,7 +25,7 @@ public class RequestHandler {
                 System.out.println("Client connected: " + clientSocket.getInetAddress().getHostAddress());
 
                 // create a new thread to handle the client request
-                Thread handlerThread = new Thread(new RequestHandlerThread(clientSocket));
+                Thread handlerThread = new Thread(new MessageHandlerThread(clientSocket));
                 handlerThread.start();
             }
         } catch (Exception e) {
