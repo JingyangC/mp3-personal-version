@@ -1,5 +1,7 @@
 package cpen221.mp3.client;
 
+import cpen221.mp3.request.Request;
+
 public class Client {
     // You can add additional private fields and methods to this class if you wish
 
@@ -13,6 +15,11 @@ public class Client {
         this.email = email;
         this.host = host;
         this.port = port;
+    }
+
+    // sends a request to the given host and port
+    public void sendRequest(Request request, String host, int port) {
+        // implement this method
     }
 
 }
