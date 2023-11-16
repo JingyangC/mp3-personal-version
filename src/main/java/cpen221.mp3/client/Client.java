@@ -20,6 +20,8 @@ public class Client {
     // sends a request to the given host and port
     public void sendRequest(Request request, String host, int port) {
         // implement this method
+
+        // note that Request is a complex object that you need to serialize before sending
     }
 
 }

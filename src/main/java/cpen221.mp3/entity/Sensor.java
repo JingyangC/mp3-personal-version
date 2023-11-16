@@ -31,5 +31,7 @@ public class Sensor implements Entity {
 
     public void sendEvent(Event event, String host, int port) {
         // implement this method
+
+        // note that Event is a complex object that you need to serialize before sending
     }
 }
