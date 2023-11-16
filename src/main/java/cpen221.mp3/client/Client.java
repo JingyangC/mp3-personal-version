@@ -1,7 +1,5 @@
 package cpen221.mp3.client;
 
-import cpen221.mp3.request.Request;
-
 public class Client {
     // You can add additional private fields and methods to this class if you wish
 

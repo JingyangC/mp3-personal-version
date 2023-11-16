@@ -1,12 +1,12 @@
-package cpen221.mp3.filter;
+package cpen221.mp3.server;
 
 import cpen221.mp3.CSVEventReader;
 import cpen221.mp3.event.ActuatorEvent;
 import cpen221.mp3.event.Event;
 import cpen221.mp3.event.SensorEvent;
-import static cpen221.mp3.filter.BooleanOperator.EQUALS;
-import static cpen221.mp3.filter.DoubleOperator.GREATER_THAN_OR_EQUALS;
-import static cpen221.mp3.filter.DoubleOperator.LESS_THAN;
+import static cpen221.mp3.server.BooleanOperator.EQUALS;
+import static cpen221.mp3.server.DoubleOperator.GREATER_THAN_OR_EQUALS;
+import static cpen221.mp3.server.DoubleOperator.LESS_THAN;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;

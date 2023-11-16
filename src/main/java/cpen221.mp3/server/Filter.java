@@ -1,4 +1,4 @@
-package cpen221.mp3.filter;
+package cpen221.mp3.server;
 
 import cpen221.mp3.event.Event;
 import java.util.List;

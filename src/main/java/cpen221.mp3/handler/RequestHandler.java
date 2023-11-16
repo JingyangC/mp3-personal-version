@@ -1,4 +1,4 @@
-package cpen221.mp3.server;
+package cpen221.mp3.handler;
 
 import java.net.ServerSocket;
 import java.net.Socket;

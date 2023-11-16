@@ -1,4 +1,4 @@
-package cpen221.mp3.request;
+package cpen221.mp3.client;
 
 enum RequestType {
     CONFIG,
