@@ -14,7 +14,7 @@ public class SimpleClientTests{
     public void testRegisterEntities() {
         Client client = new Client(0, "test@test.com", "127.0.0.1", 4578);
 
-        Entity thermostat = new Sensor(0, client.getClientId(), "Temperature");
+        Entity thermostat = new Sensor(0, client.getClientId(), "TempSensor");
         Entity valve = new Actuator(0, -1, "Switch", false);
 
         assertFalse(thermostat.registerForClient(1));

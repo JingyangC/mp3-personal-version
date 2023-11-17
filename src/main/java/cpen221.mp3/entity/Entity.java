@@ -17,6 +17,8 @@ public interface Entity {
 
     boolean registerForClient(int clientId);
 
+    void setEventGenerationFrequency(double frequency);
+
     // sends an event to the given host and port
     void sendEvent(Event event, String host, int port);
 }

@@ -7,6 +7,7 @@ public class Actuator implements Entity {
     private int clientId;
     private final String type;
     private boolean state;
+    private double eventGenerationFrequency = 0.2; // default value in Hz (1/s)
 
     public Actuator(int id, String type, boolean init_state) {
         this.id = id;
@@ -54,6 +55,15 @@ public class Actuator implements Entity {
     public boolean registerForClient(int clientId) {
         // implement this method
         return false;
+    }
+
+    /**
+     * Sets the frequency of event generation
+     *
+     * @param frequency the frequency of event generation in Hz (1/s)
+     */
+    void setEventGenerationFrequency(double frequency){
+        // implement this method
     }
 
     public void sendEvent(Event event, String host, int port) {
