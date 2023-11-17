@@ -17,8 +17,11 @@ public interface Entity {
 
     boolean registerForClient(int clientId);
 
+    // sets or updates the http endpoint of the entity
+    void setEndpoint(String host, int port);
+
     void setEventGenerationFrequency(double frequency);
 
-    // sends an event to the given host and port
-    void sendEvent(Event event, String host, int port);
+    // sends an event to the endpoint
+    void sendEvent(Event event);
 }
