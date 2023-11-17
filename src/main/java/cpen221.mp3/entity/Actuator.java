@@ -8,9 +8,16 @@ public class Actuator implements Entity {
     private final String type;
     private boolean state;
 
+    public Actuator(int id, String type, boolean init_state) {
+        this.id = id;
+        this.clientId = -1;         // remains unregistered
+        this.type = type;
+        this.state = init_state;
+    }
+
     public Actuator(int id, int clientId, String type, boolean init_state) {
         this.id = id;
-        this.clientId = clientId;
+        this.clientId = clientId;   // registered for the client
         this.type = type;
         this.state = init_state;
     }
@@ -37,6 +44,16 @@ public class Actuator implements Entity {
 
     public void updateState(boolean new_state) {
         this.state = new_state;
+    }
+
+    /**
+     * Registers the sensor for the given client
+     *
+     * @return true if the sensor is new (clientID is -1 already) and gets successfully registered, false if the sensor is already registered (clientID is not -1)
+     */
+    public boolean registerForClient(int clientId) {
+        // implement this method
+        return false;
     }
 
     public void sendEvent(Event event, String host, int port) {

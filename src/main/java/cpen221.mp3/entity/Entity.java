@@ -15,6 +15,8 @@ public interface Entity {
     // returns true if the entity is an actuator
     boolean isActuator();
 
+    boolean registerForClient(int clientId);
+
     // sends an event to the given host and port
     void sendEvent(Event event, String host, int port);
 }
