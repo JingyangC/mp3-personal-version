@@ -52,6 +52,8 @@ public class Filter {
      * @param field the field to match (event "value" or event "timestamp")
      * @param operator the DoubleOperator to use to compare the event value with the given value
      * @param value the double value to match
+     *
+     * @throws IllegalArgumentException if the given field is not "value" or "timestamp"
      */
     public Filter(String field, DoubleOperator operator, double value) {
         // TODO: implement this method
