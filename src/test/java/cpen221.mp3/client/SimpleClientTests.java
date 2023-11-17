@@ -17,8 +17,9 @@ public class SimpleClientTests{
         Entity thermostat = new Sensor(0, client.getClientId(), "TempSensor");
         Entity valve = new Actuator(0, -1, "Switch", false);
 
-        assertFalse(thermostat.registerForClient(1));
-        assertTrue(valve.registerForClient(1));
+        assertFalse(thermostat.registerForClient(1));   // thermostat is already registered to client 0
+        assertTrue(thermostat.registerForClient(0));    // registering thermostat for existing client (client 0) is fine and should return true
+        assertTrue(valve.registerForClient(1));         // valve was unregistered, and can be registered to client 1, even if it does not exist
     }
 
     @Test

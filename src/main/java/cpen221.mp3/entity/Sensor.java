@@ -57,7 +57,7 @@ public class Sensor implements Entity {
     /**
      * Registers the sensor for the given client
      *
-     * @return true if the sensor is new (clientID is -1 already) and gets successfully registered, false if the sensor is already registered (clientID is not -1)
+     * @return true if the sensor is new (clientID is -1 already) and gets successfully registered or if it is already registered for clientId, else false
      */
     public boolean registerForClient(int clientId) {
         // implement this method
