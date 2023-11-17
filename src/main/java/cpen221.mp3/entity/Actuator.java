@@ -62,7 +62,7 @@ public class Actuator implements Entity {
      *
      * @param frequency the frequency of event generation in Hz (1/s)
      */
-    void setEventGenerationFrequency(double frequency){
+    public void setEventGenerationFrequency(double frequency){
         // implement this method
     }
 
