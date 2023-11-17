@@ -24,7 +24,7 @@ public class SimpleClientTests{
     @Test
     public void testAddEntities() {
         Client client1 = new Client(0, "test1@test.com", "127.0.0.1", 4578);
-        Client client2 = new Client(0, "test2@test.com", "127.0.0.1", 4578);
+        Client client2 = new Client(1, "test2@test.com", "127.0.0.1", 4578);
 
         Entity valve = new Actuator(0, -1, "Switch", false);
 

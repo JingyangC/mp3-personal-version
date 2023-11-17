@@ -4,7 +4,7 @@ import cpen221.mp3.event.Event;
 
 public class Actuator implements Entity {
     private final int id;
-    private final int clientId;
+    private int clientId;
     private final String type;
     private boolean state;
 
