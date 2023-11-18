@@ -8,8 +8,7 @@ import cpen221.mp3.client.Request;
 import java.util.List;
 
 enum NotificationChannel {
-    SOCKET,
-    EMAIL
+    SOCKET
 }
 
 public class Server {
