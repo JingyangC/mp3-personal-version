@@ -1,21 +1,28 @@
 package cpen221.mp3.entity;
 
+import cpen221.mp3.client.Request;
 import cpen221.mp3.event.Event;
+import cpen221.mp3.server.SeverCommandToActuator;
 
 public class Actuator implements Entity {
     private final int id;
     private int clientId;
     private final String type;
-    private String host = null;
-    private int port = 0;
     private boolean state;
     private double eventGenerationFrequency = 0.2; // default value in Hz (1/s)
+    // the following specifies the http endpoint that the actuator should send events to
+    private String serverIP = null;
+    private int serverPort = 0;
+    // the following specifies the http endpoint that the actuator should be able to receive commands on from server
+    private String host = null;
+    private int port = 0;
 
     public Actuator(int id, String type, boolean init_state) {
         this.id = id;
         this.clientId = -1;         // remains unregistered
         this.type = type;
         this.state = init_state;
+        // TODO: need to establish a server socket to listen for commands from server
     }
 
     public Actuator(int id, int clientId, String type, boolean init_state) {
@@ -23,24 +30,27 @@ public class Actuator implements Entity {
         this.clientId = clientId;   // registered for the client
         this.type = type;
         this.state = init_state;
+        // TODO: need to establish a server socket to listen for commands from server
     }
 
-    public Actuator(int id, String type, boolean init_state, String host, int port) {
+    public Actuator(int id, String type, boolean init_state, String serverIP, int serverPort) {
         this.id = id;
         this.clientId = -1;         // remains unregistered
         this.type = type;
         this.state = init_state;
-        this.host = host;
-        this.port = port;
+        this.serverIP = serverIP;
+        this.serverPort = serverPort;
+        // TODO: need to establish a server socket to listen for commands from server
     }
 
-    public Actuator(int id, int clientId, String type, boolean init_state, String host, int port) {
+    public Actuator(int id, int clientId, String type, boolean init_state, String serverIP, int serverPort) {
         this.id = id;
         this.clientId = clientId;   // registered for the client
         this.type = type;
         this.state = init_state;
-        this.host = host;
-        this.port = port;
+        this.serverIP = serverIP;
+        this.serverPort = serverPort;
+        // TODO: need to establish a server socket to listen for commands from server
     }
 
     public int getId() {
@@ -63,6 +73,14 @@ public class Actuator implements Entity {
         return state;
     }
 
+    public String getIP() {
+        return host;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
     public void updateState(boolean new_state) {
         this.state = new_state;
     }
@@ -78,14 +96,15 @@ public class Actuator implements Entity {
     }
 
     /**
-     * Sets or updates the http endpoint of the sensor
-     *
-     * @param host the host name of the endpoint
-     * @param port the port number of the endpoint
+     * Sets or updates the http endpoint that 
+     * the actuator should send events to
+     * 
+     * @param serverIP the IP address of the endpoint
+     * @param serverPort the port number of the endpoint
      */
-    public void setEndpoint(String host, int port){
-        this.host = host;
-        this.port = port;
+    public void setEndpoint(String serverIP, int serverPort){
+        this.serverIP = serverIP;
+        this.serverPort = serverPort;
     }
 
     /**
@@ -102,4 +121,21 @@ public class Actuator implements Entity {
 
         // note that Event is a complex object that you need to serialize before sending
     }
+
+    public void processServerMessage(Request command) {
+        // implement this method
+    }
+
+    @Override
+    public String toString() {
+        return "Actuator{" +
+                "getId=" + getId() +
+                ",ClientId=" + getClientId() +
+                ",EntityType=" + getType() +
+                ",IP=" + getIP() +
+                ",Port=" + getPort() +
+                '}';
+    }
+
+    // you will most likely need additional helper methods for this class
 }

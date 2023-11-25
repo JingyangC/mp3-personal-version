@@ -42,4 +42,15 @@ public class ActuatorEvent implements Event {
     public double getValueDouble() {
         return -1;
     }
+
+    @Override
+    public String toString() {
+        return "ActuatorEvent{" +
+                "TimeStamp=" + getTimeStamp() +
+                ",ClientId=" + getClientId() +
+                ",EntityId=" + getEntityId() +
+                ",EntityType=" + getEntityType() +
+                ",Value=" + getValueBoolean() +
+                '}';
+    }
 }

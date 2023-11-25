@@ -8,4 +8,20 @@ public class TimeWindow {
         this.startTime = startTime;
         this.endTime = endTime;
     }
+
+    public double getStartTime() {
+        return startTime;
+    }
+
+    public double getEndTime() {
+        return endTime;
+    }
+
+    @Override
+    public String toString() {
+        return "TimeWindow{" +
+               "StartTime=" + getStartTime() +
+               ",EndTime=" + getEndTime() +
+               '}';
+    }
 }

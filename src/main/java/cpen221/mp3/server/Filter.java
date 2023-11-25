@@ -116,4 +116,10 @@ public class Filter {
         // TODO: implement this method
         return null;
     }
+
+    @Override
+    public String toString() {
+        // TODO: implement this method
+        return null;
+    }
 }

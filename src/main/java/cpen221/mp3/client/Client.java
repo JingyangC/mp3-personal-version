@@ -6,16 +6,16 @@ public class Client {
 
     private final int clientId;
     private String email;
-    private String host;
-    private int port;
+    private String serverIP;
+    private int serverPort;
 
     // you would need additional fields to enable functionalities required for this class
 
-    public Client(int clientId, String email, String host, int port) {
+    public Client(int clientId, String email, String serverIP, int serverPort) {
         this.clientId = clientId;
         this.email = email;
-        this.host = host;
-        this.port = port;
+        this.serverIP = serverIP;
+        this.serverPort = serverPort;
     }
 
     public int getClientId() {
@@ -32,7 +32,7 @@ public class Client {
         return false;
     }
 
-    // sends a request to the given host and port
+    // sends a request to the server
     public void sendRequest(Request request) {
         // implement this method
 

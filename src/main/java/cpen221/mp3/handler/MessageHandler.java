@@ -21,11 +21,11 @@ public class MessageHandler {
             System.out.println("Server started on port " + port);
 
             while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("Client connected: " + clientSocket.getInetAddress().getHostAddress());
+                Socket incomingSocket = serverSocket.accept();
+                System.out.println("Client/Entity connected: " + incomingSocket.getInetAddress().getHostAddress());
 
-                // create a new thread to handle the client request
-                Thread handlerThread = new Thread(new MessageHandlerThread(clientSocket));
+                // create a new thread to handle the client request or entity event
+                Thread handlerThread = new Thread(new MessageHandlerThread(incomingSocket));
                 handlerThread.start();
             }
         } catch (Exception e) {

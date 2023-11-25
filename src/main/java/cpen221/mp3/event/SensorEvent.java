@@ -42,4 +42,15 @@ public class SensorEvent implements Event {
     public boolean getValueBoolean() {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "SensorEvent{" +
+               "TimeStamp=" + getTimeStamp() +
+               ",ClientId=" + getClientId() + 
+               ",EntityId=" + getEntityId() +
+               ",EntityType=" + getEntityType() + 
+               ",Value=" + getValueDouble() + 
+               '}';
+    }
 }
