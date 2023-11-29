@@ -61,6 +61,14 @@ public class Sensor implements Entity {
      */
     public boolean registerForClient(int clientId) {
         // implement this method
+        if(this.clientId == -1){
+            this.clientId = clientId;
+            return true;
+        }
+        if(this.clientId == clientId){
+            return true;
+        }
+
         return false;
     }
 
@@ -81,8 +89,12 @@ public class Sensor implements Entity {
      *
      * @param frequency the frequency of event generation in Hz (1/s)
      */
-    public void setEventGenerationFrequency(double frequency){
+    public void setEventGenerationFrequency(double frequency){      //other clients cannot change it
         // implement this method
+        if(getClientId() == this.clientId){     //double check implementation
+            eventGenerationFrequency = frequency;
+        }
+
     }
 
     public void sendEvent(Event event) {

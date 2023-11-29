@@ -4,37 +4,48 @@ public class ActuatorEvent implements Event {
     // TODO: Implement this class
     // you can add private fields and methods to this class
 
+    private double TimeStamp;
+    private int ClientId;
+    private int EntityId;
+    private String EntityType;  //potential make final
+    private boolean Value;
+
     public ActuatorEvent(double TimeStamp, 
                         int ClientId,
                         int EntityId, 
                         String EntityType, 
                         boolean Value) {
         // Implement this constructor
+        this.TimeStamp = TimeStamp;
+        this.ClientId = ClientId;
+        this.EntityId = EntityId;
+        this.EntityType = new String(EntityType);
+        this.Value = Value;
     }
 
     public double getTimeStamp() {
         // Implement this method
-        return 0;
+        return TimeStamp;
     }
 
     public int getClientId() {
         // Implement this method
-        return 0;
+        return ClientId;
     }
 
     public int getEntityId() {
         // Implement this method
-        return 0;
+        return EntityId;
     }
 
     public String getEntityType() {
         // Implement this method
-        return null;
+        return new String(EntityType);
     }
 
     public boolean getValueBoolean() {
         // Implement this method
-        return false;
+        return Value;
     }
 
     // Actuator events do not have a double value

@@ -29,6 +29,10 @@ public class Client {
      */
     public boolean addEntity(Entity entity) {
         // implement this method
+
+        if(entity.getClientId() == -1){
+            return entity.registerForClient(getClientId());        //make sure calling the right function
+        }
         return false;
     }
 

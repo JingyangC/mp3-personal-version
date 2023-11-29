@@ -92,6 +92,13 @@ public class Actuator implements Entity {
      */
     public boolean registerForClient(int clientId) {
         // implement this method
+        if(this.clientId == -1){
+            this.clientId = clientId;
+            return true;
+        }
+        if(this.clientId == clientId){
+            return true;
+        }
         return false;
     }
 
@@ -114,6 +121,9 @@ public class Actuator implements Entity {
      */
     public void setEventGenerationFrequency(double frequency){
         // implement this method
+        if(getClientId() == this.clientId){     //double check implementation, unsure why needed
+            eventGenerationFrequency = frequency;
+        }
     }
 
     public void sendEvent(Event event) {
